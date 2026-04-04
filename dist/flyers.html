@@ -4,39 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flyers & Guides</title>
-    <link rel="stylesheet" href="fixice.css?v=4">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
     <div id="menu-container"></div>
     <div class="content">
-        <main class="fixice-main">
+        <main class="main">
             <details open>
-                <summary style="font-size:1.3em;font-weight:bold; color:#23408e;">Immigrant Support Information</summary>
-                <div style="padding:0.5em 1.2em;">
-                    <p>
-                        <a href="one%20page%20overview%20of%20what%20to%20do%20if%20detained.pdf" target="_blank" rel="noopener" style="font-size:1.2em;font-weight:bold; color:#23408e;">
+                <summary>Immigrant Support Information</summary>
+                <ul>
+                    <li>
+                        <a href="one%20page%20overview%20of%20what%20to%20do%20if%20detained.pdf" target="_blank" rel="noopener">
                             One page overview: What to do if loved one detained (PDF)
                         </a>
-                    </p>
-                    <p>
-                        <a href="LUCE%20Community%20Resource%20Guide%20-%20Detained%20Loved%20One%20-%20Condensed.pdf" target="_blank" rel="noopener" style="font-size:1.2em;font-weight:bold; color:#23408e;">
+                    </li>
+                    <li>
+                        <a href="LUCE%20Community%20Resource%20Guide%20-%20Detained%20Loved%20One%20-%20Condensed.pdf" target="_blank" rel="noopener">
                             LUCE Detailed Guide: What to do when ICE has detained your loved one
                         </a>
-                    </p>
-                </div>
+                    </li>
+                </ul>
             </details>
-            <details style="margin-top:2em;">
-                <summary style="font-size:1.3em;font-weight:bold; color:#23408e;">Activist Flyers</summary>
-                <div style="padding:0.5em 1.2em;">
-                    <p>
-                        <a href="halfpageflyer_two_per_page_burlington.pdf" target="_blank" rel="noopener" style="font-size:1.2em;font-weight:bold; color:#23408e;">
+            <details>
+                <summary>Activist Flyers</summary>
+                <ul>
+                    <li>
+                        <a href="halfpageflyer_two_per_page_burlington.pdf" target="_blank" rel="noopener">
                             Two half-page flyers on one page for protests in Burlington MA
                         </a>
-                    </p>
-                    <p style="margin-top:1em; color:#444;">
-                        Download and share our half page flyer to let others know about the protests happening at or near the Burlington MA detention center. This flyer is designed to be printed on standard 8.5 x 11 paper and cut in half, creating a convenient half-page handout. It's perfect for sharing at community events, protests, or simply leaving in public spaces to raise awareness about the detention center.
-                    </p>
-                </div>
+                    </li>
+                </ul>
+                <p>
+                    Download and share our half page flyer to let others know about the protests happening at or near the Burlington MA detention center. This flyer is designed to be printed on standard 8.5 x 11 paper and cut in half, creating a convenient half-page handout. It's perfect for sharing at community events, protests, or simply leaving in public spaces to raise awareness about the detention center.
+                </p>
             </details>
         </main>
     </div>
@@ -46,9 +46,11 @@
         if (typeof initMenu === 'function') {
             initMenu();
         } else {
+            // If menu.js is not loaded yet, wait for it
             window.addEventListener('DOMContentLoaded', function () {
                 if (typeof initMenu === 'function') initMenu();
             });
         }
     </script>
-                        <a href="one%20page%20overview%20of%20what%20to%20do%20if%20detained.pdf" target="_blank" rel="noopener" style="font-size:1.2em;font-weight:bold; color:#23408e;">
+</body>
+</html>

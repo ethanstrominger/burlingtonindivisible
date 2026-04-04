@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   background: #fff;
 }
-.fixice-title {
+.burlingtonindivisible-title {
   text-align: center;
   margin: 0.5em 0 0.2em 0;
   font-size: 2em;
@@ -125,4 +125,14 @@ h2 {
 .parking-info {
   font-size: 1.1em;
   color: #333;
+}
+.shout-out {
+  font-style: italic;
+  color: #555;
+}
+.footer {
+  margin-top: 40px;
+  font-size: 0.9em;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
 }

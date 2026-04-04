@@ -1,7 +1,7 @@
 {
-  "name": "fixice-static-server",
+  "name": "burlingtonindivisible-static-server",
   "version": "1.0.0",
-  "description": "Static site with live reload for fixice",
+  "description": "Static site with live reload for burlingtonindivisible",
   "scripts": {
     "start": "node server.js",
     "dev": "live-server dist --port=8080 --no-browser"

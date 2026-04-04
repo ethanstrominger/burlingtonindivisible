@@ -1,4 +1,4 @@
-# FixICE Donation Site
+# Burlington Indivisible Donation Site
 
 This project is a web application for North Shore LUCE fundraising and protest information. It allows users to:
 - View protest and parking info
@@ -38,8 +38,8 @@ Replace `postgres` with your desired password if needed.
 ### Setup
 1. Clone this repository:
    ```sh
-   git clone https://github.com/yourusername/fixice.git
-   cd fixice
+   git clone https://github.com/yourusername/burlingtonindivisible.git
+   cd burlingtonindivisible
    ```
 2. Install dependencies:
    ```sh
@@ -54,7 +54,7 @@ Replace `postgres` with your desired password if needed.
    
    Then create the database:
    ```sh
-   createdb fixice
+   createdb burlingtonindivisible
    ```
    
    If you want to use a different username or password, update the `DATABASE_URL` in your `.env` file accordingly.

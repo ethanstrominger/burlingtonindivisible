@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- File replaced by weekly-fundraiser.html -->
-  <link rel="stylesheet" href="fixice.css?v=4">
+  <link rel="stylesheet" href="style.css?v=4">
   <style>
     body { font-family: sans-serif; background: #f8f8f8; margin: 0; padding: 0; }
     .container { max-width: 500px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 2em; }
@@ -170,8 +170,8 @@
       archiveList.innerHTML = html;
     }
 
-    // Use explicit API URL since the frontend (fixice.org) and API (api.fixice.org) are separate services
-    const API_BASE = window.location.hostname === 'localhost' ? '' : 'https://api.fixice.org';
+    // Use explicit API URL since the frontend (burlingtonindivisible.org) and API (api.burlingtonindivisible.org) are separate services
+    const API_BASE = window.location.hostname === 'localhost' ? '' : 'https://api.burlingtonindivisible.org';
 
     // Donate button: record amount, then show Go To MIRA button (real link – never blocked)
     document.getElementById('donate-once').addEventListener('click', async function() {
@@ -217,9 +217,9 @@
         statusEl.style.color = '#b22222';
         statusEl.innerHTML =
           '⚠️ Could not automatically record your donation amount.<br>' +
-          'To help track the fundraiser, email info@fixice.org after you donate'+
+          'To help track the fundraiser, email info@burlingtonindivisible.org after you donate'+
           encodeURIComponent(Number(amount).toFixed(2)) +
-          '%20to%20MIRA\">info@fixice.org</a> with your amount ($' +
+          '%20to%20MIRA\">info@burlingtonindivisible.org</a> with your amount ($' +
           Number(amount).toFixed(2) + ').<br>Then click below to continue.';
       }
 

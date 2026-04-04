@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- File replaced by weekly-fundraiser.html -->
-  <link rel="stylesheet" href="fixice.css?v=4">
+  <link rel="stylesheet" href="style.css?v=4">
   <style>
     body { font-family: sans-serif; background: #f8f8f8; margin: 0; padding: 0; }
     .container { max-width: 500px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 2em; }
@@ -166,7 +166,7 @@
     // Use correct backend URL based on environment
     const API_BASE = window.location.hostname === 'localhost'
       ? ''
-      : 'https://api.fixice.org';
+      : 'https://api.burlingtonindivisible.org';
 
     function openGivebutter(amount, frequency) {
       const url = `https://givebutter.com/NSLUCE/donate?amount=${encodeURIComponent(amount)}&frequency=${encodeURIComponent(frequency)}`;

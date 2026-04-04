@@ -16,8 +16,8 @@ console.log("Starting server with NODE_ENV =", process.env.NODE_ENV);
 // Allow cross-origin requests from the frontend
 app.use(cors({
   origin: [
-    "https://fixice.org",
-    "https://www.fixice.org",
+    "https://burlingtonindivisible.org",
+    "https://www.burlingtonindivisible.org",
     "http://localhost:8080",
     "http://localhost:3000",
   ],
@@ -35,19 +35,19 @@ const pool = new Pool({
       : false,
 });
 
-// Check that the fixice database exists and log result
+// Check that the burlingtonindivisible database exists and log result
 async function checkDatabaseExists() {
   try {
     // Query current database name
     const result = await pool.query("SELECT current_database()");
     const dbName = result.rows[0].current_database;
-    if (dbName === "fixice") {
-      console.log("Connected to fixice database.");
+    if (dbName === "burlingtonindivisible") {
+      console.log("Connected to burlingtonindivisible database.");
     } else {
-      console.warn(`Connected to database: ${dbName} (expected: fixice)`);
+      console.warn(`Connected to database: ${dbName} (expected: burlingtonindivisible)`);
     }
   } catch (err) {
-    console.error("Could not verify fixice database:", err.message);
+    console.error("Could not verify burlingtonindivisible database:", err.message);
   }
 }
 checkDatabaseExists();

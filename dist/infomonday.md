@@ -39,7 +39,7 @@ Before arriving, please consider your own self-preservation (citizenship status)
 
 # Parking
 
-- For public transportation options, see the [public transportation page](https://fixice.org/public-transportation).
+- For public transportation options, see the [public transportation page](https://burlingtonindivisible.org/public-transportation).
 - Parking at the nearby AMC theater is approved for Wednesday protests (not recommended on holidays). Cars have been towed in various lots and on District Ave and at Burlington Mall. Tickets may cost $180 or more. If towed, see Bearing Witness for guidance and reporting.
 - The key to minimizing risk: drop off any visible signs, walk into a business, and do not walk directly from your car to the protest.
 - You can drop off protest signs at 1000 District Ave on Wed, Thu, and Fri. For Mon, Tue, and Sat protests, drop off signs near the corner of District Ave. Do not drop off signs if no one is around.

@@ -100,7 +100,7 @@ function httpGet(reqUrl) {
     const options = {
       hostname: parsed.hostname,
       path: parsed.pathname + parsed.search,
-      headers: { 'User-Agent': 'fixice-calendar-fetcher/1.0' },
+      headers: { 'User-Agent': 'burlingtonindivisible-calendar-fetcher/1.0' },
     };
     https.get(options, (res) => {
       if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {

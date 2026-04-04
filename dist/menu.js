@@ -24,8 +24,8 @@ async function initMenu() {
 
 // Analytics: record page loads and link clicks
 (function() {
-  // Use explicit API URL since the frontend (fixice.org) and API (api.fixice.org) are separate services
-  const API_BASE = window.location.hostname === 'localhost' ? '' : 'https://api.fixice.org';
+  // Use explicit API URL since the frontend (burlingtonindivisible.org) and API (api.burlingtonindivisible.org) are separate services
+  const API_BASE = window.location.hostname === 'localhost' ? '' : 'https://api.burlingtonindivisible.org';
   function recordVisit(url) {
     fetch(API_BASE + '/api/record?url=' + encodeURIComponent(url), { method: 'GET', keepalive: true });
   }
