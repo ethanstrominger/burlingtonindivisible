@@ -1,3 +1,47 @@
-<script>
-  window.location.href = 'about.html';
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burlington Indivisible</title>
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+  <div id="menu-container"></div>
+  <div class="content">
+    <main class="main"> 
+      <p>Burlington Indivisible is a grassroots force dedicated to local action and the defense of liberal policies. We currently focus on getting out the vote and protesting the ICE detention center,</p>
+
+      <h3>Take Action With Us</h3>
+      <p>We need your voice and your energy to fuel our advocacy. Whether you have five minutes for a phone call or an afternoon for a protest, there is a place for you here.</p>
+      <ul>
+        <li><strong>Lobby for Change:</strong> Join our coordinated email, calling, and letter-writing campaigns to hold leadership accountable.</li>
+        <li><strong>Protest outside the ICE detention center and hold signs on Burlington Mall Road</strong>. Join us every Monday and Tuesdsay.</li>
+        <li><strong>Get Creative:</strong> Help us design flyers and craft signs for our next demonstration.</li>
+        <li><strong>Lead the Way:</strong> <strong>Organize events for the issues you are passionate about</strong> and help shape our local impact. We welcome organizers ready to champion other liberal policies and community initiatives.</li>
+      </ul>
+
+      <h3>Upcoming Events</h3>
+      <p>We are launching <strong>monthly lunch and evening gatherings</strong> focused on immigrant rights and voter mobilization. These events are the perfect opportunity to connect with like-minded neighbors and take a stand.</p>
+
+      <blockquote>
+        <p><strong>JOIN US</strong></p>
+        <p><em>eMail <a href="mailto:info@burlingtonindivisible.org">info@burlingtonindivisible.org</a> to help organize, launch a new initiative, or volunteer for our next mobilization.</em></p>
+      </blockquote>
+
+    </main>
+  </div>
+
+  <script src="menu.js"></script>
+  <script>
+    if (typeof initMenu === 'function') {
+      initMenu();
+    } else {
+      window.addEventListener('DOMContentLoaded', function () {
+        if (typeof initMenu === 'function') initMenu();
+      });
+    }
+  </script>
+
+</body>
+</html>
