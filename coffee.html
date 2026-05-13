@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- File replaced by weekly-fundraiser.html -->
+  <link rel="stylesheet" href="style.css?v=4">
+  <style>
+    body { font-family: sans-serif; background: #f8f8f8; margin: 0; padding: 0; }
+    .container { max-width: 500px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 2em; }
+    h1 { color: #0066cc; }
+    label { display: block; margin-top: 1.5em; font-weight: bold; }
+    input[type="number"] { width: 100%; padding: 0.5em; font-size: 1.1em; margin-top: 0.5em; }
+    button { margin-top: 1.5em; background: #0066cc; color: #fff; border: none; padding: 0.7em 1.5em; border-radius: 4px; font-size: 1.1em; cursor: pointer; }
+    .links { margin-top: 2em; }
+    .links a { display: block; margin-bottom: 0.7em; color: #0066cc; text-decoration: underline; }
+    .success { color: green; margin-top: 1em; }
+    .tab-bar { display: flex; gap: 0; margin-bottom: 0; }
+    .tab-btn {
+      flex: 1; padding: 0.8em 0.5em; font-size: 1em; font-weight: bold;
+      border: 2px solid #0066cc; background: #e8f0fe; color: #0066cc;
+      cursor: pointer; border-bottom: none; border-radius: 8px 8px 0 0;
+      margin: 0; transition: background 0.2s, color 0.2s;
+    }
+    .tab-btn.active { background: #0066cc; color: #fff; }
+    .tab-btn:not(.active):hover { background: #d0e0f8; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+  </style>
+</head>
+<body>
+  <div id="menu-container"></div>
+  <div class="container" style="padding-top:1em;">
+    <h1 style="margin-bottom:0; text-align:center;">Coffee Connection - Mar 11, 2026</h1>
+    <p style="font-style:italic; color:#555; margin-top:0.3em; margin-bottom:1.5em; text-align:center;">Caffeinate, Connect, and Contribute</p>
+    <div class="tab-bar">
+      <button class="tab-btn" data-tab="about">About</button>
+      <button class="tab-btn active" data-tab="fundraiser">Featured Fundraiser</button>
+      <button class="tab-btn" data-tab="actions">Featured Actions</button>
+    </div>
+
+    <!-- Tab 1: Featured Fundraiser -->
+    <div class="tab-content active" id="tab-fundraiser">
+      <h1>Featured Fundraiser</h1>
+      <p style="font-size:1.1em; color:#444; margin-bottom:1.5em;">Every Wednesday there will be a new fundraiser.</p>
+      <div style="margin-top:1.5em;">
+        <ul style="margin-bottom:1em; padding-left:1.2em;">
+          <li><strong>$20</strong> &mdash; One month basic needs in ICE detention</li>
+          <li><strong>$240</strong> &mdash; One year basic needs in ICE detention</li>
+          <li><strong>$1,000</strong> &mdash; Contribute towards bonding someone out of ICE detention (usually $5,000 to $10,000)</li>
+          <li><strong>$12,000</strong> &mdash; Fund basic needs for all supported in ICE detention</li>
+        </ul>
+        <label for="amount" style="display:block;font-weight:bold;margin-bottom:0.4em;">Donation Amount (USD)</label>
+        <input type="number" id="amount" name="amount" min="1" step="any" placeholder="Enter amount" style="width:100%;padding:0.5em;font-size:1.1em;">
+        <button type="button" id="donate-once" style="margin-top:1em;background:#0066cc;color:#fff;border:none;padding:0.7em 1.5em;border-radius:4px;font-size:1.1em;cursor:pointer;">Donate</button>
+      </div>
+      <div id="donate-step2" style="display:none;margin-top:1.2em;padding:1em;border-radius:6px;border:1px solid #ddd;background:#f9f9f9;">
+        <div id="donate-status" style="font-size:1em;margin-bottom:0.8em;"></div>
+        <a id="donate-retry-btn" href="https://checkout.square.site/merchant/ML58Q933VJ8VR/checkout/G3FQAZYAV4Q6HURVAC7WA4ZZ" target="_blank" style="display:inline-block;background:#0066cc;color:#fff;text-decoration:none;padding:0.7em 1.5em;border-radius:4px;font-size:1.1em;font-weight:bold;">Go to Beyond Bond Boston Donation Page &rarr;</a>
+      </div>
+      <div class="links">
+        <a href="https://beyondbondboston.org" target="_blank">BIJAN Beyond Fund Information</a>
+      </div>
+      <button id="list-donations-btn" type="button" style="background:#888; margin-top:1em;">List All Donations</button>
+      <div id="donations-list" style="margin-top:1.5em; display:none;"></div>
+    </div>
+
+    <!-- Tab 2: Featured Actions -->
+    <div class="tab-content" id="tab-actions">
+      <h1>Coffee Featured Actions</h1>
+      <h2 style="color:#333; margin-top:1em;">Volunteer</h2>
+      <p style="font-size:1.1em; color:#444;">3 Types of Orgs in our MA Immigrant Rights Coalition</p>
+
+      <div style="margin-top:1em; border:1px solid #ddd; border-radius:6px; padding:0.5em 1em;">
+        <h2 style="color:#0066cc; margin-top:0;">Community Connection — BIJAN</h2>
+        <p><strong>BIJAN:</strong> Support people impacted by ICE detention and deportation.</p>
+        <p>Website: <a href="https://BeyondBondBoston.org/join" target="_blank">BeyondBondBoston.org/join</a></p>
+        <ul style="margin-bottom:1em; padding-left:1.2em;">
+          <li>Volunteer for accompaniment and support</li>
+          <li>Donate to help pay bonds and basic needs</li>
+          <li>Spread the word and share resources</li>
+          <li>Follow on <a href="https://www.instagram.com/beyondbondboston/" target="_blank">Instagram</a> and <a href="http://www.facebook.com/BeyondBondBoston" target="_blank">Facebook</a></li>
+          <li>Contact: <a href="mailto:bijan.accompaniment@gmail.com">bijan.accompaniment@gmail.com</a> or <a href="tel:6173967143">617-396-7143</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Tab 3: About -->
+    <div class="tab-content" id="tab-about">
+      <h1>About Coffee Connection</h1>
+      <p style="font-size:1.1em; color:#444; line-height:1.6;">The Coffee Connection is part of the weekly Wednesday <strong>Bearing Witness</strong> events. We offer folks some warm coffee and cocoa, provide an opportunity to <strong>connect</strong> with us and other organizations, and give everyone a chance to <strong>contribute</strong> to a good cause.</p>
+      <p style="font-size:1.1em; color:#444; line-height:1.6;">Each week we feature a different fundraiser and highlight ways to support immigrants - from helping individuals navigate their interactions with ICE, to reining in ICE abuses, to electing leaders who will stand against these cruelties. Look for us at the upcoming Wednesday Bearing Witness events!</p>
+      <p style="font-size:1.1em; color:#444; line-height:1.6; font-style:italic;">Caffeinate, Connect, and Contribute.</p>
+    </div>
+  </div>
+  <div class="container" id="archive-section" style="display:none;">
+    <h2 style="color:#0066cc;">Past Featured Coffees</h2>
+    <div id="archive-list"></div>
+  </div>
+
+  <script src="coffee-archives.js"></script>
+  <script>
+    // Tab switching logic with URL hash support
+    function switchTab(tabName) {
+      document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      document.querySelectorAll('.tab-content').forEach(function(c) { c.classList.remove('active'); });
+      var btn = document.querySelector('.tab-btn[data-tab="' + tabName + '"]');
+      var content = document.getElementById('tab-' + tabName);
+      if (btn && content) {
+        btn.classList.add('active');
+        content.classList.add('active');
+      }
+    }
+
+    document.querySelectorAll('.tab-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var tab = btn.dataset.tab;
+        window.location.hash = tab;
+        switchTab(tab);
+      });
+    });
+
+    // Set tab from URL hash on load (default to fundraiser)
+    var validTabs = ['about', 'fundraiser', 'actions'];
+    var hash = window.location.hash.replace('#', '');
+    switchTab(validTabs.indexOf(hash) !== -1 ? hash : 'fundraiser');
+
+    // Handle back/forward navigation
+    window.addEventListener('hashchange', function() {
+      var h = window.location.hash.replace('#', '');
+      switchTab(validTabs.indexOf(h) !== -1 ? h : 'fundraiser');
+    });
+
+    // Render archive links if any exist
+    if (typeof COFFEE_ARCHIVES !== 'undefined' && COFFEE_ARCHIVES.length > 0) {
+      var archiveSection = document.getElementById('archive-section');
+      var archiveList = document.getElementById('archive-list');
+      archiveSection.style.display = '';
+      var html = '';
+      for (var i = 0; i < COFFEE_ARCHIVES.length; i++) {
+        var a = COFFEE_ARCHIVES[i];
+        html += '<p style="margin:0.5em 0;"><a href="' + a.file + '">' + a.date + ': ' + a.title + '</a></p>';
+      }
+      archiveList.innerHTML = html;
+    }
+
+    // Use explicit API URL since the frontend (burlingtonindivisible.org) and API (api.burlingtonindivisible.org) are separate services
+    const API_BASE = window.location.hostname === 'localhost' ? '' : 'https://api.burlingtonindivisible.org';
+
+    // Donate button: record amount, then show Go To MIRA button (real link – never blocked)
+    document.getElementById('donate-once').addEventListener('click', async function() {
+      const btn = document.getElementById('donate-once');
+      const amount = document.getElementById('amount').value;
+      if (!amount || isNaN(amount) || Number(amount) <= 0) {
+        alert('Please enter a valid donation amount.');
+        return;
+      }
+
+      // Prevent double-click
+      btn.disabled = true;
+      btn.textContent = 'Recording...';
+
+      // Show step-2 panel immediately with a spinner so user sees progress
+      const step2 = document.getElementById('donate-step2');
+      const statusEl = document.getElementById('donate-status');
+      step2.style.display = 'block';
+      statusEl.style.color = '#555';
+      statusEl.textContent = '⏳ Recording your donation amount ($' + Number(amount).toFixed(2) + ')...';
+
+      let logSuccess = false;
+      try {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 20000);
+        const resp = await fetch(API_BASE + '/api/log-donation', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ amount, frequency: 'once' }),
+          signal: controller.signal
+        });
+        clearTimeout(timeout);
+        if (resp.ok) logSuccess = true;
+        else console.warn('Donation log returned status:', resp.status);
+      } catch (err) {
+        console.warn('Donation log failed:', err.message || err);
+      }
+
+      if (logSuccess) {
+        step2.style.display = 'none';
+        window.open(API_BASE + '/api/donate?amt=' + encodeURIComponent(amount), '_blank');
+      } else {
+        statusEl.style.color = '#b22222';
+        statusEl.innerHTML =
+          '⚠️ Could not automatically record your donation amount.<br>' +
+          'To help track the fundraiser, email info@burlingtonindivisible.org after you donate'+
+          encodeURIComponent(Number(amount).toFixed(2)) +
+          '%20to%20MIRA\">info@burlingtonindivisible.org</a> with your amount ($' +
+          Number(amount).toFixed(2) + ').<br>Then click below to continue.';
+      }
+
+      btn.textContent = 'Donate';
+      btn.disabled = false;
+    });
+
+    // List all donations button logic
+    document.getElementById('list-donations-btn').addEventListener('click', async function() {
+      const listDiv = document.getElementById('donations-list');
+      listDiv.style.display = 'block';
+      listDiv.innerHTML = 'Loading...';
+      try {
+        const resp = await fetch(API_BASE + '/api/list-donations');
+        if (!resp.ok) throw new Error('Failed to fetch');
+        const data = await resp.json();
+        if (!Array.isArray(data.donations) || data.donations.length === 0) {
+          listDiv.innerHTML = '<em>No donations recorded yet.</em>';
+          return;
+        }
+        let html = '<table style="width:100%;border-collapse:collapse;"><tr><th style="text-align:left;">Amount</th><th style="text-align:left;">Frequency</th><th style="text-align:left;">Date</th></tr>';
+        for (const d of data.donations) {
+          let dateStr = '';
+          if (d.created_at) {
+            const dateObj = new Date(d.created_at);
+            dateStr = dateObj.toLocaleDateString();
+          }
+          html += `<tr><td>$${Number(d.amount).toFixed(2)}</td><td>${d.frequency}</td><td>${dateStr}</td></tr>`;
+        }
+        html += '</table>';
+        html += `<div style='margin-top:1em;font-weight:bold;'>Total: $${Number(data.total).toFixed(2)}</div>`;
+        listDiv.innerHTML = html;
+      } catch (err) {
+        listDiv.innerHTML = '<span style="color:red;">Error loading donations.</span>';
+      }
+    });
+  </script>
+  <script src="menu.js"></script>
+  <script>
+    if (typeof initMenu === 'function') {
+      initMenu();
+    } else {
+      window.addEventListener('DOMContentLoaded', function() {
+        if (typeof initMenu === 'function') initMenu();
+      });
+    }
+  </script>
+</body>
+</html>

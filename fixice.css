@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff;
+}
+.burlingtonindivisible-title {
+  text-align: center;
+  margin: 0.5em 0 0.2em 0;
+  font-size: 2em;
+  font-weight: bold;
+}
+.main-menu {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.menu-links {
+  width: 100vw;
+  background: #fff;
+  box-shadow: 0 2px 8px #0002;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding: 0.7em 0.5em 0.7em 0.5em;
+  margin: 0 auto 0.5em auto;
+  border-radius: 0 0 12px 0;
+  gap: 1em;
+  transition: all 0.3s;
+}
+.menu-item {
+  color: #000;
+  background: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.4em 1em;
+  border-radius: 5px;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.menu-item:hover {
+  background: #ffe4ee;
+}
+.menu-toggle {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  margin: 0.5em 0 0 0;
+  z-index: 1100;
+  position: relative;
+}
+.menu-bar {
+  display: block;
+  width: 28px;
+  height: 4px;
+  margin: 4px 0;
+  background: #23408e;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+@media (max-width: 1200px) {
+  .menu-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 90vw;
+    max-width: 340px;
+    background: #fff;
+    z-index: 3000;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 2px 0 8px #0002;
+    overflow-y: auto;
+    margin-left: 0;
+    align-items: flex-start;
+  }
+  .menu-links.menu-links-open {
+    display: flex !important;
+  }
+  .menu-item {
+    color: #000 !important;
+    background: #fff !important;
+  }
+  .menu-toggle {
+    display: flex !important;
+  }
+}
+@media (min-width: 1200px) {
+  .menu-links {
+    display: flex !important;
+    background: #23408e !important;
+  }
+  .menu-toggle {
+    display: none !important;
+  }
+  .menu-item {
+    color: #fff !important;
+    background: #23408e !important;
+  }
+}
+.content {
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 1em;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #0001;
+}
+h2 {
+  color: #23408e;
+  margin-top: 0;
+}
+.parking-info {
+  font-size: 1.1em;
+  color: #333;
+}
+.shout-out {
+  font-style: italic;
+  color: #555;
+}
+.footer {
+  margin-top: 40px;
+  font-size: 0.9em;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
