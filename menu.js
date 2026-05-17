@@ -2,17 +2,46 @@
 async function initMenu() {
   const menuContainer = document.getElementById('menu-container');
   if (menuContainer) {
-    const response = await fetch('menu.html');
-    const html = await response.text();
-    const temp = document.createElement('div');
-    temp.innerHTML = html;
-    let menuMarkup = '';
-    const nav = temp.querySelector('nav.main-menu');
-    const header = temp.querySelector('div[style*="flex-direction:column"]');
-    if (header) menuMarkup += header.outerHTML;
-    if (nav) menuMarkup += nav.outerHTML;
-    if (!menuMarkup) menuMarkup = temp.innerHTML;
-    menuContainer.innerHTML = menuMarkup;
+    const fallbackMenuMarkup = [
+      '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff; margin-bottom: 0.5em;min-height:3.2em;">',
+      '  <div style="width:100%;display:flex;align-items:center;justify-content:center;position:relative;">',
+      '    <h1 class="burlingtonindivisible-title" style="margin-bottom:0.1em; margin-top:0; width:100%; text-align:center;">Burlington Indivisible</h1>',
+      '    <a href="contact.html" class="contact-link-next-title" style="position:absolute;right:2em;top:50%;transform:translateY(-50%);color:#23408e;font-weight:700;text-decoration:underline;padding:0.3em 1em;border-radius:5px;transition:background 0.2s;white-space:nowrap;">Contact</a>',
+      '  </div>',
+      '  <div class="burlingtonindivisible-subtitle" style="margin-bottom:0.2em;">Burlington, MA Indivisible Chapter</div>',
+      '  <div style="font-size:0.95em;font-style:italic;color:#23408e;margin-bottom:0.7em;">Advocate, Donate, Protest, Volunteer, Boycott</div>',
+      '</div>',
+      '<nav class="main-menu">',
+      '  <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">',
+      '    <span class="menu-bar"></span>',
+      '    <span class="menu-bar"></span>',
+      '    <span class="menu-bar"></span>',
+      '  </button>',
+      '  <div class="menu-links" id="menuLinks">',
+      '    <a href="index.html" class="menu-item">Home</a>',
+      '    <a href="parking.html" class="menu-item">Parking</a>',
+      '  </div>',
+      '</nav>'
+    ].join('');
+
+    try {
+      const response = await fetch('menu.html');
+      if (!response.ok) throw new Error('Failed to fetch menu.html');
+      const html = await response.text();
+      const temp = document.createElement('div');
+      temp.innerHTML = html;
+      let menuMarkup = '';
+      const nav = temp.querySelector('nav.main-menu');
+      const header = temp.querySelector('div[style*="flex-direction:column"]');
+      if (header) menuMarkup += header.outerHTML;
+      if (nav) menuMarkup += nav.outerHTML;
+      if (!menuMarkup) menuMarkup = temp.innerHTML;
+      menuContainer.innerHTML = menuMarkup || fallbackMenuMarkup;
+    } catch (e) {
+      // file:// pages and some browser settings block fetch for local files.
+      menuContainer.innerHTML = fallbackMenuMarkup;
+    }
+
     // Wait for DOM update, then run menu logic
     setTimeout(() => {
       setupMenuLogic();
