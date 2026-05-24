@@ -23,7 +23,10 @@ async function initMenu() {
       '    <a href="parking.html" class="menu-item">Parking</a>',
       '    <a href="protests1000districtave.html" class="menu-item">Protests at 1000 District Ave</a>',
       '  </div>',
-      '</nav>'
+      '</nav>',
+      '<div class="menu-announcement" style="max-width:980px;margin:0 auto 0.8em auto;padding:0.75em 0.9em;border:2px solid #b22222;border-radius:8px;background:#fff4f4;color:#8b0000;font-weight:800;text-align:center;font-size:1.5rem;line-height:1.25;">',
+      '  Monday May 25 event is cancelled and will be rescheduled for another date.',
+      '</div>'
     ].join('');
 
     try {
@@ -35,8 +38,10 @@ async function initMenu() {
       let menuMarkup = '';
       const nav = temp.querySelector('nav.main-menu');
       const header = temp.querySelector('div[style*="flex-direction:column"]');
+      const announcement = temp.querySelector('.menu-announcement');
       if (header) menuMarkup += header.outerHTML;
       if (nav) menuMarkup += nav.outerHTML;
+      if (announcement) menuMarkup += announcement.outerHTML;
       if (!menuMarkup) menuMarkup = temp.innerHTML;
       menuContainer.innerHTML = menuMarkup || fallbackMenuMarkup;
     } catch (e) {

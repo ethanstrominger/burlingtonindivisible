@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invalid Link</title>
+  <link rel="stylesheet" href="style.css?v=5">
+</head>
+
+<body>
+  <div id="menu-container"></div>
+  <div class="content" style="max-width:760px;margin:0 auto;padding:2em;">
+    <section style="padding:1rem;border:2px solid #b22222;border-radius:8px;background:#fff4f4;">
+      <h1 style="margin-top:0;color:#8b0000;">Invalid Link</h1>
+      <p>The page you requested could not be found.</p>
+      <p><strong>Entered link:</strong> <span id="entered-link"></span></p>
+      <p style="margin-bottom:0;"><a href="index.html">Go to Home</a> | <a href="events.html">Go to Events</a></p>
+    </section>
+  </div>
+
+  <script src="menu.js?v=5"></script>
+  <script>
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      var entered = params.get('path') || '(unknown)';
+      document.getElementById('entered-link').textContent = entered;
+
+      if (typeof initMenu === 'function') {
+        initMenu();
+      } else {
+        window.addEventListener('DOMContentLoaded', function() {
+          if (typeof initMenu === 'function') initMenu();
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>

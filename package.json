@@ -4,7 +4,8 @@
   "description": "Static site with live reload for burlingtonindivisible",
   "scripts": {
     "start": "node server.js",
-    "dev": "live-server dist --port=8080 --no-browser"
+    "dev": "live-server dist --port=8080 --no-browser",
+    "preview": "node preview-server.js"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^6.0.1",
