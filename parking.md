@@ -57,7 +57,7 @@ Approximately 0.8 miles from 1000 District Ave (30+ spaces available).
 </details>
 
 <details>
-<summary><strong>40 Third Ave, Burlington, MA (next to Wegmans)</strong></summary>
+<summary><strong>53 Third Ave, Burlington, MA (next to Wegmans)</strong></summary>
 
 Park in public parking lot. There is a bus stop right across that will take you to within 0.4 miles of 1000 District Ave. Public transportation options are listed below.
 </details>

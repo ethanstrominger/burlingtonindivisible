@@ -23,10 +23,7 @@ async function initMenu() {
       '    <a href="parking.html" class="menu-item">Parking</a>',
       '    <a href="protests1000districtave.html" class="menu-item">Protests at 1000 District Ave</a>',
       '  </div>',
-      '</nav>',
-      '<div class="menu-announcement" style="max-width:980px;margin:0 auto 0.8em auto;padding:0.75em 0.9em;border:2px solid #b22222;border-radius:8px;background:#fff4f4;color:#8b0000;font-weight:800;text-align:center;font-size:1.5rem;line-height:1.25;">',
-      '  Monday event is cancelled and will be rescheduled for another date.',
-      '</div>'
+      '</nav>'
     ].join('');
 
     try {
