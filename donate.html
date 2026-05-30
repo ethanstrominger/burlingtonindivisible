@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate</title>
+  <link rel="stylesheet" href="style.css?v=4">
+  <style>
+    .donate-wrap {
+      max-width: 760px;
+      margin: 2em auto;
+      padding: 1.5em;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px #0001;
+    }
+    .goal-card {
+      border: 2px solid #23408e;
+      border-radius: 8px;
+      padding: 1em;
+      background: #f5f8ff;
+      margin: 1em 0 1.2em 0;
+    }
+    .goal-card h2 {
+      margin: 0 0 0.35em 0;
+      color: #23408e;
+    }
+    .amount-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.6em;
+      margin: 0.6em 0 0.8em 0;
+    }
+    .donate-btn {
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+      color: #fff;
+      background: #23408e;
+      border: none;
+      border-radius: 6px;
+      padding: 0.7em 0.9em;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .donate-btn:hover {
+      background: #1a2f6b;
+    }
+    .other-row {
+      display: flex;
+      gap: 0.5em;
+      margin-top: 0.5em;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .other-row input {
+      flex: 1 1 180px;
+      min-width: 180px;
+      padding: 0.55em;
+      border-radius: 6px;
+      border: 1px solid #bbb;
+      font-size: 1em;
+    }
+    .venmo-note {
+      margin-top: 0.6em;
+      color: #444;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+  <div id="menu-container"></div>
+
+  <div class="content" style="background:none;box-shadow:none;padding:0;max-width:none;">
+    <main class="donate-wrap">
+      <h1 style="margin-top:0;color:#23408e;">Support Burlington Indivisible</h1>
+      <p>Your support helps us with miscellaneous expenses.</p>
+
+      <section class="goal-card" aria-label="Fundraising goal">
+        <h2>Fundraising Goal: $1,200</h2>
+        <p style="margin:0;">We are currently trying to raise <strong>$1,200</strong>. Every contribution helps.</p>
+      </section>
+
+      <h2 style="margin-bottom:0.3em;">Choose an Amount</h2>
+
+      <div class="amount-grid">
+        <a class="donate-btn" id="donate-10" target="_blank" rel="noopener">Donate $10</a>
+        <a class="donate-btn" id="donate-20" target="_blank" rel="noopener">Donate $20</a>
+        <a class="donate-btn" id="donate-40" target="_blank" rel="noopener">Donate $40</a>
+        <a class="donate-btn" id="donate-100" target="_blank" rel="noopener">Donate $100</a>
+      </div>
+
+      <div class="other-row">
+        <label for="other-amount"><strong>Other:</strong></label>
+        <input id="other-amount" type="number" min="1" step="1" placeholder="Enter amount (USD)">
+        <a class="donate-btn" id="donate-other" target="_blank" rel="noopener">Donate Other</a>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="menu.js"></script>
+  <script>
+    (function() {
+      var VENMO_ACCOUNT = 'Ethan-Strominger';
+      var VENMO_NOTE = 'Burlington Indivisible';
+
+      function makeVenmoUrl(amount) {
+        var value = Number(amount);
+        if (!isFinite(value) || value <= 0) return '#';
+        var url = new URL('https://venmo.com/u/' + VENMO_ACCOUNT);
+        url.searchParams.set('txn', 'pay');
+        url.searchParams.set('amount', value.toFixed(2));
+        url.searchParams.set('note', VENMO_NOTE);
+        return url.toString();
+      }
+
+      function setPresetLink(id, amount) {
+        var el = document.getElementById(id);
+        if (el) el.href = makeVenmoUrl(amount);
+      }
+
+      setPresetLink('donate-10', 10);
+      setPresetLink('donate-20', 20);
+      setPresetLink('donate-40', 40);
+      setPresetLink('donate-100', 100);
+
+      var otherAmount = document.getElementById('other-amount');
+      var otherLink = document.getElementById('donate-other');
+
+      function refreshOtherLink() {
+        var amount = Number(otherAmount.value);
+        if (!amount || amount <= 0) {
+          otherLink.href = '#';
+          return;
+        }
+        otherLink.href = makeVenmoUrl(amount);
+      }
+
+      otherAmount.addEventListener('input', refreshOtherLink);
+      otherLink.addEventListener('click', function(e) {
+        refreshOtherLink();
+        if (otherLink.href.endsWith('#')) {
+          e.preventDefault();
+          alert('Please enter a valid amount for Other.');
+        }
+      });
+
+      if (typeof initMenu === 'function') {
+        initMenu();
+      } else {
+        window.addEventListener('DOMContentLoaded', function() {
+          if (typeof initMenu === 'function') initMenu();
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
