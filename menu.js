@@ -20,8 +20,9 @@ async function initMenu() {
       '  <div class="menu-links" id="menuLinks">',
       '    <a href="about.html" class="menu-item">About</a>',
       '    <a href="events.html" class="menu-item">Events</a>',
-      '    <a href="donate.html" class="menu-item">Donate</a>',
+      '    <a href="demand-oversight.html" class="menu-item">Take Action</a>',
       '    <a href="protests1000districtave.html" class="menu-item">Protests at 1000 District Ave</a>',
+      '    <a href="donate.html" class="menu-item">Donate</a>',
       '  </div>',
       '</nav>'
     ].join('');
