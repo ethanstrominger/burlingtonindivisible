@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Take Action</title>
+  <link rel="stylesheet" href="style.css?v=5">
+  <style>
+    body { visibility: hidden; }
+    .content {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 1.25rem;
+    }
+    .page-title {
+      margin: 0 0 0.8rem 0;
+      color: #23408e;
+      line-height: 1.2;
+      font-size: 2rem;
+    }
+    .intro {
+      line-height: 1.6;
+      color: #1f1f1f;
+      font-size: 1rem;
+      margin: 0 0 1rem 0;
+    }
+    .action-box {
+      background: #fff;
+      border: 2px solid #23408e;
+      border-radius: 10px;
+      padding: 1.25rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      margin-top: 1rem;
+    }
+    .action-box h2 {
+      margin-top: 0;
+      color: #23408e;
+      line-height: 1.2;
+    }
+    .action-box h3 {
+      color: #2f56aa;
+      margin: 0.4rem 0 0.8rem 0;
+      line-height: 1.25;
+      font-size: 1.25rem;
+    }
+    .action-box p {
+      line-height: 1.6;
+      color: #1f1f1f;
+      font-size: 1rem;
+    }
+    .choice-list {
+      display: grid;
+      gap: 0.9rem;
+      margin-top: 1rem;
+    }
+    .choice {
+      border: 1px solid #d6e0fa;
+      border-radius: 8px;
+      padding: 0.9rem 1rem;
+      background: #f7faff;
+    }
+    .choice a {
+      font-weight: 700;
+      color: #1f4ba7;
+      text-decoration: underline;
+      font-size: 1.05rem;
+    }
+    .choice p {
+      margin: 0.45rem 0 0 0;
+      font-size: 0.98rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="menu-container"></div>
+
+  <div class="content">
+    <h1 class="page-title">Take Action</h1>
+
+    <section class="action-box">
+      <h2>Demand Congress Conduct Unannounced Inspections</h2>
+      <p class="intro">People inside the Burlington ICE facility have faced prolonged detention in overcrowded conditions without beds, adequate medical care, sanitation, reliable legal access, or basic dignity. Members of Congress have tried to inspect ICE sites, but DHS and ICE have repeatedly obstructed meaningful oversight through restrictive rules and procedural delays. By law, ICE must allow for unannounced inspections. Without consistent, independent inspections, the public cannot verify what is happening inside and families are left without transparency or accountability. In response, a new group has just been formed named the Congressional ICE Accountability Coalition to push for sustained, coordinated, unannounced oversight visits and public reporting of findings.</p>
+      <div class="choice-list">
+        <section class="choice">
+          <a href="https://docs.google.com/document/d/1LdqxFe7Z7UkWdT3o1iG7mySooBvV6yDb4q-wZQkcRhM/edit?usp=sharing" target="_blank" rel="noopener">Congressional ICE Accountability Coalition</a>
+          <p>Multiple groups have been working separately to pressure congressional members to hold ICE accountable. The Congressional ICE Accountability Coalition was formed to centralize efforts. Click on the link above to learn about the broader campaign background, the toolkit, and ways to join organizing teams.</p>
+        </section>
+
+        <section class="choice">
+          <a href="call-for-oversight.html">Quick Call Script</a>
+          <p>Click link above for a quick call script and a concise ask for your U.S. senator or representative if you do not have time to dig into the details.</p>
+        </section>
+      </div>
+    </section>
+
+    <section class="action-box">
+      <h2>Get Citizens to Stop Investing in Prison Companies</h2>
+      <div class="choice-list">
+        <section class="choice">
+          <a href="https://de-icecitizensbank.org" target="_blank" rel="noopener">Sever the Relationship Between Citizens and Prison Companies</a>
+          <p>Many people bank with institutions that invest in or support private prison and detention infrastructure without realizing it.</p>
+          <p>The <strong>De-ICE Citizens Bank group</strong> is a public-pressure and education effort that helps people understand these financial links and take action to break them. Click link above to learn more about Citizens Bank and actions you can take. The linked action guide focuses on contacting legislators who use Citizens Bank for campaign finances and urging them to pressure Citizens to cut ties with private prison contractors.</p>
+          <p><a href="https://docs.google.com/document/d/1ND1tQsmeolc1yO5isyd6wtvoAwwHvyvqPX_6lsZ_ar8/edit?tab=t.0" target="_blank" rel="noopener">Pressure Congress to Divest from Citizens</a></p>
+        </section>
+      </div>
+    </section>
+  </div>
+
+  <script src="menu.js?v=5"></script>
+  <script>
+    function _showBody() { document.body.style.visibility = 'visible'; }
+    if (typeof initMenu === 'function') {
+      initMenu().then(_showBody).catch(_showBody);
+    } else {
+      window.addEventListener('DOMContentLoaded', function () {
+        if (typeof initMenu === 'function') initMenu().then(_showBody).catch(_showBody);
+        else _showBody();
+      });
+    }
+  </script>
+</body>
+</html>
