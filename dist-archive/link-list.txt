@@ -483,7 +483,7 @@ Cause: Elections
 
 Title: Volunteer with CASA – Help Immigrant Neighbors in Metrowest
 Description: CASA in Framingham serves immigrants in the Metrowest area. Help by delivering groceries, driving kids to school, accompanying people to appointments, or assisting at the CASA office. Spanish/Portuguese helpful but not required.
-Link: https://docs.google.com/document/d/1dlGg7uXAFhRrfGaHAl_0avxXSDNzxNevvHYCDTJa1Lw/edit?tab=t.0
+Link: https://docs.google.com/document/d/1dlGg7uXAFhRrfGaHAl_0avxXSDNzxNevvHYCDTJa1Lw/mobilebasic
 Action Type: volunteer
 Cause: Immigrant Aid
 
