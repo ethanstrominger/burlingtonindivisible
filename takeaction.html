@@ -11,16 +11,17 @@
       visibility: hidden;
     }
 
-    #postcards {
-  /* This forces the browser to stop scrolling 100 pixels BEFORE the heading hits the top, 
+    [id] {
+      /* This forces the browser to stop scrolling 100 pixels BEFORE the heading hits the top, 
      leaving room to see the previous text. Adjust the pixels to see more or less text. */
-    scroll-margin-top: 100px; 
-  }
+      scroll-margin-top: 100px;
+    }
 
-/* Optional: Gives it a smooth glide instead of an instant jump */
-   html {
+    /* Optional: Gives it a smooth glide instead of an instant jump */
+    html {
       scroll-behavior: smooth;
     }
+
     .content {
       max-width: 840px;
       margin: 0 auto;
@@ -146,8 +147,7 @@
         </section>
       </div>
     </section>
-    <a name="postcards"></a>
-    <section class="action-box">
+    <section id="postcards" class="action-box">
       <h2>Support Voter Protection and Mobilization Efforts</h2>
       <p class="intro">Securing lasting institutional accountability depends on protecting voting rights and boosting
         voter turnout. Get involved with these organizations to help voters navigate ID requirements or participate in
