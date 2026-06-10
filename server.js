@@ -144,12 +144,6 @@ async function handleRecordApi(req, res) {
 app.get('/api/record', handleRecordApi);
 
 // Serve static files (adjust path as needed)
-
-function donateAmountRedirect(_req, res) {
-  res.redirect('https://checkout.square.site/merchant/ML58Q933VJ8VR/checkout/G3FQAZYAV4Q6HURVAC7WA4ZZ');
-}
-app.get('/api/donate/', donateAmountRedirect);
-
 app.use(express.static("dist"));
 
 app.listen(port, () => {

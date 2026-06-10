@@ -105,15 +105,21 @@
     (function() {
       var VENMO_ACCOUNT = 'Ethan-Strominger';
       var VENMO_NOTE = 'Burlington Indivisible';
+      var MAX_DONATION_AMOUNT = 10000;
 
       function makeVenmoUrl(amount) {
         var value = Number(amount);
-        if (!isFinite(value) || value <= 0) return '#';
-        var url = new URL('https://venmo.com/u/' + VENMO_ACCOUNT);
-        url.searchParams.set('txn', 'pay');
-        url.searchParams.set('amount', value.toFixed(2));
-        url.searchParams.set('note', VENMO_NOTE);
-        return url.toString();
+        if (!isFinite(value) || value <= 0 || value > MAX_DONATION_AMOUNT) return '#';
+        try {
+          var url = new URL('https://account.venmo.com/pay');
+          url.searchParams.set('recipients', VENMO_ACCOUNT);
+          url.searchParams.set('amount', value.toFixed(2));
+          url.searchParams.set('note', VENMO_NOTE);
+          return url.toString();
+        } catch (err) {
+          console.error('Error constructing Venmo URL:', err);
+          return '#';
+        }
       }
 
       function setPresetLink(id, amount) {
@@ -143,7 +149,12 @@
         refreshOtherLink();
         if (otherLink.href.endsWith('#')) {
           e.preventDefault();
-          alert('Please enter a valid amount for Other.');
+          var amount = Number(otherAmount.value);
+          if (amount > MAX_DONATION_AMOUNT) {
+            alert('Please enter an amount less than $' + MAX_DONATION_AMOUNT.toLocaleString() + '.');
+          } else {
+            alert('Please enter a valid amount for Other.');
+          }
         }
       });
 
