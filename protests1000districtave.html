@@ -19,6 +19,16 @@
       background: #f0f0f0;
       text-align: left;
     }
+    #postcards {
+      /* This forces the browser to stop scrolling 100 pixels BEFORE the heading hits the top, 
+        leaving room to see the previous text. Adjust the pixels to see more or less text. */
+      scroll-margin-top: 100px; 
+    }
+
+    /* Optional: Gives it a smooth glide instead of an instant jump */
+    html {
+      scroll-behavior: smooth;
+    }
     .content { max-width:none; margin:0; padding:0; background:none; box-shadow:none; border-radius:0; }
     body { visibility: hidden; }
     .section-block { margin-bottom:1em; }
