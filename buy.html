@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy</title>
+  <link rel="stylesheet" href="style.css?v=4">
+  <style>
+    .donate-wrap {
+      max-width: 600px;
+      margin: 2em auto;
+      padding: 1.5em;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px #0001;
+    }
+
+    .action-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5em;
+      margin: 1.5em 0;
+    }
+
+    .action-card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1.5em;
+      background: #fafafa;
+    }
+
+    .action-card h3 {
+      margin-top: 0;
+      color: #23408e;
+      margin-bottom: 0.8em;
+    }
+
+    .donate-btn {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+      color: #fff;
+      background: #23408e;
+      border: none;
+      border-radius: 6px;
+      padding: 0.8em;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .donate-btn:hover {
+      background: #1a2f6b;
+    }
+
+    .info-link {
+      color: #23408e;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .info-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Standard Site Navigation Header Wrapper -->
+  <header>
+    <div id="menu-container"></div>
+  </header>
+
+  <div class="content" style="background:none;box-shadow:none;padding:0;max-width:none;">
+    <main class="donate-wrap">
+      <h1>Purchases</h1>
+      <div class="action-stack">
+        <!-- Postcards and Stamps -->
+        <div class="action-card">
+          <h3>Postcards & Stamps Purchases</h3>
+
+          <a class="donate-btn" id="btn-postcards" target="_blank" rel="noopener" style="margin-bottom: 1em;">Venmo</a>
+
+          <p style="margin-top: 0.5em;">This is where you can pay for postcards and/or stamps that you bought. (You will
+            enter your payment amount directly on Venmo).</p>
+          <p style="font-size: 0.9em; font-style: italic; margin-bottom: 0;">If you haven't bought any yet but want to,
+            please email us at <a class="info-link"
+              href="mailto:info@burlingtonindivisible.org">info@burlingtonindivisible.org</a></p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Shared responsive navigation script -->
+  <script src="menu.js"></script>
+  <script>
+    (function () {
+      var VENMO_ACCOUNT = 'Ethan-Strominger';
+      var BASE_NOTE = 'Burlington Indivisible';
+
+      var btnPostcards = document.getElementById('btn-postcards');
+
+      function getVenmoBaseUrl() {
+        try {
+          return new URL('https://account.venmo.com/pay');
+        } catch (err) {
+          console.error('Error constructing Venmo URL:', err);
+          return null;
+        }
+      }
+
+      function updateLinks() {
+        var urlObjPostcards = getVenmoBaseUrl();
+        if (urlObjPostcards) {
+          urlObjPostcards.searchParams.set('recipients', VENMO_ACCOUNT);
+          urlObjPostcards.searchParams.set('note', BASE_NOTE + ' - Postcards and Stamps');
+          btnPostcards.href = urlObjPostcards.toString();
+        }
+      }
+
+      updateLinks();
+
+      // Initialization block mirror from donate scripts to handle async injection safely
+      if (typeof initMenu === 'function') {
+        initMenu();
+      } else {
+        window.addEventListener('DOMContentLoaded', function () {
+          if (typeof initMenu === 'function') initMenu();
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>

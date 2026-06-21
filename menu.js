@@ -9,29 +9,30 @@ async function initMenu() {
       '    <div style="position:absolute;right:2em;top:58%;transform:translateY(-50%);display:flex;align-items:flex-start;gap:0.8em;">',
       '      <a href="https://www.facebook.com/groups/1390676915747649/" target="_blank" rel="noopener" aria-label="Join Burlington Indivisible on Facebook" style="display:inline-flex;align-items:center;justify-content:center;width:2.15em;height:2.15em;border-radius:50%;background:#1877f2;color:#fff;font-family:Arial,sans-serif;font-size:1.35em;font-weight:700;line-height:1;text-decoration:none;white-space:nowrap;">',
       '        <span style="transform:translateY(-0.02em);">f</span>',
-      '      </a>',
+      "      </a>",
       '      <a href="subscribe.html" style="color:#23408e;font-weight:700;text-decoration:underline;padding:0.3em 0.6em;border-radius:5px;transition:background 0.2s;white-space:nowrap;">Subscribe</a>',
       '      <a href="contact.html" class="contact-link-next-title" style="color:#23408e;font-weight:700;text-decoration:underline;padding:0.3em 0.6em;border-radius:5px;transition:background 0.2s;white-space:nowrap;">Contact</a>',
-      '    </div>',
-      '  </div>',
+      "    </div>",
+      "  </div>",
       '  <div class="burlingtonindivisible-subtitle" style="margin-bottom:0.2em;">Burlington, MA Indivisible Chapter</div>',
       '  <div style="font-size:0.95em;font-style:italic;color:#23408e;margin-bottom:0.7em;">Advocate, Donate, Protest, Volunteer, Boycott</div>',
-      '</div>',
+      "</div>",
       '<nav class="main-menu">',
       '  <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">',
       '    <span class="menu-bar"></span>',
       '    <span class="menu-bar"></span>',
       '    <span class="menu-bar"></span>',
-      '  </button>',
+      "  </button>",
       '  <div class="menu-links" id="menuLinks">',
       '    <a href="about.html" class="menu-item">About</a>',
       '    <a href="events.html" class="menu-item">Events</a>',
       '    <a href="takeaction.html" class="menu-item">Take Action</a>',
       '    <a href="protests1000districtave.html" class="menu-item">Protests at 1000 District Ave</a>',
+      '    <a href="buy.html" class="menu-item">Buy</a>',
       '    <a href="donate.html" class="menu-item">Donate</a>',
-      '  </div>',
-      '</nav>'
-    ].join('');
+      "  </div>",
+      "</nav>",
+    ].join("");
 
     try {
       const response = await fetch('menu.html');
