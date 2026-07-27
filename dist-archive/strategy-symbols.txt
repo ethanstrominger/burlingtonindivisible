@@ -1,5 +1,0 @@
-donate,💸 donate
-learn,📖 learn
-volunteer,🙋 volunteer
-advocate,📢 advocate
-protest,✊ protest
