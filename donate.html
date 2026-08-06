@@ -1,225 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Donate</title>
   <link rel="stylesheet" href="style.css?v=4">
   <style>
-    .donate-wrap {
-      max-width: 600px;
-      /* Narrowed slightly for better single-column readability */
+    .donate-page {
+      max-width: 860px;
       margin: 2em auto;
-      padding: 1.5em;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px #0001;
+      padding: 1em;
     }
 
-    .action-stack {
+    .donate-intro {
+      background: #f9fbff;
+      border: 1px solid #dbe5ff;
+      border-radius: 10px;
+      padding: 1.25em;
+      margin-bottom: 1.25em;
+    }
+
+    .donate-intro h1 {
+      margin: 0 0 0.4em 0;
+      color: #23408e;
+    }
+
+    .actblue-payment-note {
+      display: flex;
+      align-items: center;
+      gap: 0.7em;
+      margin-top: 0.8em;
+      padding-top: 0.8em;
+      border-top: 1px solid #dbe5ff;
+      font-weight: 600;
+      color: #1f2f63;
+    }
+
+    .actblue-logo {
+      width: 108px;
+      height: auto;
+      display: block;
+    }
+
+    .fund-grid {
+      display: grid;
+      gap: 1em;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .fund-card {
+      border: 1px solid #d8deea;
+      border-radius: 10px;
+      background: #fff;
+      padding: 1.2em;
+      box-shadow: 0 2px 8px #0000000f;
       display: flex;
       flex-direction: column;
-      gap: 1.5em;
-      margin: 1.5em 0;
     }
 
-    .action-card {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1.5em;
-      background: #fafafa;
-    }
-
-    .action-card h3 {
-      margin-top: 0;
+    .fund-card h2 {
+      margin: 0 0 0.45em 0;
       color: #23408e;
-      margin-bottom: 0.8em;
+      font-size: 1.35em;
     }
 
-    .action-card p {
+    .fund-card p {
       margin: 0 0 1em 0;
-      font-size: 0.95em;
-      color: #444;
+      line-height: 1.45;
+      color: #2f2f2f;
+      flex-grow: 1;
     }
 
-    .fund-desc {
-      font-size: 0.9em;
-      color: #555;
-      margin: 0.6em 0 0 0;
-      border-top: 1px solid #eef0f5;
-      padding-top: 0.6em;
-    }
-
-    .donate-btn {
-      display: block;
+    .donate-button {
+      display: inline-block;
       text-align: center;
       text-decoration: none;
       font-weight: 700;
       color: #fff;
       background: #23408e;
-      border: none;
-      border-radius: 6px;
-      padding: 0.8em;
-      cursor: pointer;
-      transition: background 0.15s;
+      border-radius: 7px;
+      padding: 0.75em 1em;
+      transition: background 0.2s ease;
     }
 
-    .donate-btn:hover {
-      background: #1a2f6b;
+    .donate-button:hover {
+      background: #1b316d;
     }
 
-    .secondary-card {
-      background: #fff;
-      border: 1px dashed #bbb;
-    }
-
-    .note-customizer {
-      margin-bottom: 0.8em;
-    }
-
-    .note-customizer label {
-      display: block;
-      margin-bottom: 0.3em;
-      font-weight: bold;
-      font-size: 0.85em;
-      color: #555;
-    }
-
-    .note-customizer input {
-      width: 100%;
-      padding: 0.5em;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      font-size: 0.9em;
-      box-sizing: border-box;
-    }
-
-    .goal-card {
-      border: 2px solid #23408e;
-      border-radius: 8px;
-      padding: 1em;
-      background: #f5f8ff;
-      margin: 1.2em 0 0 0;
-    }
-
-    .goal-card h4 {
-      margin: 0 0 0.35em 0;
-      color: #23408e;
-      font-size: 1.1em;
-    }
-
-    .goal-details {
-      margin: 0.4em 0 0 0;
-      padding-left: 1.2em;
-      font-size: 0.9em;
-    }
-
-    .goal-details li {
-      margin-bottom: 0.2em;
-    }
-
-    .info-link {
-      color: #23408e;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .info-link:hover {
-      text-decoration: underline;
-    }
   </style>
 </head>
-
 <body>
   <div id="menu-container"></div>
 
-  <div class="content" style="background:none;box-shadow:none;padding:0;max-width:none;">
-    <main class="donate-wrap">
-      <h1>Donations</h1>
-      <div class="action-stack">
-        <!-- Card 1: General Donations / Food Aid Split -->
-        <div class="action-card">
-          <h3>General Fund & Food Aid Donations</h3>
-          <p>You can modify allocation below.</p>
+  <main class="donate-page">
+    <section class="donate-intro" aria-label="Donation overview">
+      <h1>Support Burlington Indivisible</h1>
+      <p>Your donation helps power our organizing work. Choose the fund that matches how you want your support used.</p>
+      <p><strong>Accepted payment methods:</strong> Venmo, PayPal, and credit card.</p>
+      <p class="actblue-payment-note">
+        <img class="actblue-logo" src="https://upload.wikimedia.org/wikipedia/commons/0/0f/ActBlue_logo.svg" alt="ActBlue logo">
+        Payments made via ActBlue.
+      </p>
+    </section>
 
-          <div class="note-customizer">
-            <input id="venmo-split-note" type="text" value="75% food aid, 25% general fund">
-          </div>
-          <a class="donate-btn" id="btn-split" target="_blank" rel="noopener" style="margin-bottom: 1em;">Venmo</a>
-          <div class="fund-desc">
-            <strong>Food Aid:</strong> Provides food aid to immigrants leaving appointments at the
-            Burlington ICE Facility and to families of detainees.
-          </div>
-          <div class="fund-desc">
-            <strong>General Fund:</strong> Covers website hosting, printing costs, and equipment costs for larger events
-            (one off events, MLK Day, July 4th, etc.)
-          </div>
+    <section class="fund-grid" aria-label="Donation funds">
+      <article class="fund-card">
+        <h2>General Fund</h2>
+        <p>The General Fund supports organizing essentials like posters, flyers, equipment, snacks, and art supplies.</p>
+        <a class="donate-button" href="https://secure.actblue.com/bi-generalfund" target="_blank" rel="noopener noreferrer">Donate to General Fund</a>
+      </article>
 
-          <section class="goal-card" aria-label="Fundraising goal">
-            <h4>Fundraising Goal</h4>
-            <ul class="goal-details">
-              <li><strong>$900</strong> for food aid</li>
-              <li><strong>$300</strong> for the general fund</li>
-            </ul>
-          </section>
-        </div>
+      <article class="fund-card">
+        <h2>Stamp Fund</h2>
+        <p>The Stamp Fund is used to purchase postcard stamps for get out the vote postcard campaigns.</p>
+        <a class="donate-button" href="https://secure.actblue.com/bi-stampfund" target="_blank" rel="noopener noreferrer">Donate to Stamp Fund</a>
+      </article>
 
-        <!-- Card 2: Food Collection -->
-        <div class="action-card secondary-card">
-          <h3>Food Collection</h3>
-          <p>Drop off food during our <a class="info-link" href="./protests1000districtave.html" target="_blank"
-              rel="noopener">Mon–Fri events at 1000
-              District Ave</a>.</p>
-          <p style="margin-bottom: 0; font-size: 0.95em;"><strong>Items needed:</strong> Bottled water and staples like
-            rice, beans, taco kits, oatmeal, and peanut butter.</p>
-        </div>
-      </div>
+      <article class="fund-card">
+        <h2>Compassion Corner</h2>
+        <p>Compassion Corner distributes food to immigrants leaving 1000 District Ave in Burlington.</p>
+        <a class="donate-button" href="https://secure.actblue.com/bi-comfortcorner" target="_blank" rel="noopener noreferrer">Donate to Compassion Corner</a>
+      </article>
+    </section>
 
-    </main>
-  </div>
+  </main>
 
   <script src="menu.js"></script>
   <script>
-    (function () {
-      var VENMO_ACCOUNT = 'Ethan-Strominger';
-      var BASE_NOTE = 'Burlington Indivisible';
-
-      var splitNoteInput = document.getElementById('venmo-split-note');
-      var btnSplit = document.getElementById('btn-split');
-
-      function getVenmoBaseUrl() {
-        try {
-          return new URL('https://account.venmo.com/pay');
-        } catch (err) {
-          console.error('Error constructing Venmo URL:', err);
-          return null;
-        }
-      }
-
-      function updateLinks() {
-        var urlObjSplit = getVenmoBaseUrl();
-        if (urlObjSplit) {
-          var customSplit = splitNoteInput.value.trim();
-          var splitNote = BASE_NOTE + ' - ' + (customSplit || '75% food aid, 25% general fund');
-          urlObjSplit.searchParams.set('recipients', VENMO_ACCOUNT);
-          urlObjSplit.searchParams.set('note', splitNote);
-          btnSplit.href = urlObjSplit.toString();
-        }
-      }
-
-      splitNoteInput.addEventListener('input', updateLinks);
-      updateLinks();
-
-      if (typeof initMenu === 'function') {
-        initMenu();
-      } else {
-        window.addEventListener('DOMContentLoaded', function () {
-          if (typeof initMenu === 'function') initMenu();
-        });
-      }
-    })();
+    if (typeof initMenu === 'function') {
+      initMenu();
+    } else {
+      window.addEventListener('DOMContentLoaded', function () {
+        if (typeof initMenu === 'function') initMenu();
+      });
+    }
   </script>
 </body>
-
 </html>

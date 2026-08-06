@@ -507,14 +507,6 @@ Link: https://www.mass50501.org/flockoff
 Action Type: advocate
 Cause: ICE Abuses
 
-Link: send-to-citizens.html
-Title: Email Citizens Bank CEOs
-Description: In less than 3 minutes, send email to seven Citizens Bank CEOs urging them to end their relationship with prison companies used by ICE.
-Action Type: boycott
-Mode: On Your Own
-Tag: Quick, Featured
-Cause: ICE Abuses
-
 Link: https://action.aclu.org/send-message/stop-anti-voter-bills-now
 Title: Stop Anti-Voter Bills Now (ACLU)
 Description: Send a quick message to oppose anti-voter bills and protect elections in Massachusetts.
