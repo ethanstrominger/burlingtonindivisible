@@ -7,10 +7,6 @@
   <title>Take Action</title>
   <link rel="stylesheet" href="style.css?v=5">
   <style>
-    body {
-      visibility: hidden;
-    }
-
     [id] {
       /* This forces the browser to stop scrolling 100 pixels BEFORE the heading hits the top, 
      leaving room to see the previous text. Adjust the pixels to see more or less text. */
@@ -104,14 +100,59 @@
       margin: 0.45rem 0 0 0;
       font-size: 0.98rem;
     }
+
+    .quick-links {
+      border: 1px solid #d6e0fa;
+      border-radius: 10px;
+      background: #f7faff;
+      padding: 0.9rem 1rem;
+      margin: 0 0 1rem 0;
+    }
+
+    .quick-links h2 {
+      margin: 0 0 0.45rem 0;
+      color: #23408e;
+      font-size: 1.1rem;
+    }
+
+    .quick-links ul {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+
+    .quick-links a {
+      color: #1f4ba7;
+      font-weight: 600;
+    }
+
+    .back-to-top {
+      margin-top: 0.9rem;
+      margin-bottom: 0;
+      text-align: right;
+      font-size: 0.95rem;
+    }
+
+    .back-to-top a {
+      color: #1f4ba7;
+      font-weight: 600;
+    }
   </style>
 </head>
 
 <body>
   <div id="menu-container"></div>
 
-  <div class="content">
+  <div class="content" id="top">
     <h1 class="page-title">Take Action</h1>
+
+    <nav class="quick-links" aria-label="Quick links">
+      <h2>Quick Links</h2>
+      <ul>
+        <li><a href="#postcards">Writing Postcards from Home</a></li>
+        <li><a href="#call-your-rep">Call Your U.S. Representative and Senators</a></li>
+        <li><a href="#phone-bank-pa">Vote By Mail Phone Banks for PA</a></li>
+      </ul>
+    </nav>
 
     <section id="postcards" class="action-box">
       <h2>Writing Postcards from Home</h2>
@@ -185,6 +226,7 @@
             time.</p>
         </li>
       </ul>
+      <p class="back-to-top"><a href="#top">Back to top</a></p>
     </section>
 
     <section class="action-box" id="call-your-rep">
@@ -216,19 +258,31 @@
           <p>Contact <strong>info@burlingtonindivisible.org</strong> if you want help with call language, local coordination, or follow-up actions.</p>
         </section>
       </div>
+      <p class="back-to-top"><a href="#top">Back to top</a></p>
+    </section>
+
+    <section class="action-box" id="phone-bank-pa">
+      <h2>Vote By Mail Phone Banks for PA</h2>
+      <p class="intro">Join Red2Blue and OnePA for a virtual phone bank to help Pennsylvania voters apply for mail-in ballots in key flippable districts.</p>
+
+      <div class="choice-list">
+        <section class="choice">
+          <a href="https://www.mobilize.us/red2blueorg/event/980565/" target="_blank" rel="noopener">Sign up on Mobilize</a>
+          <p>Thursdays from 6 to 8 pm EDT. Training and tech support are included, and volunteers use the Scale to Win calling platform.</p>
+        </section>
+      </div>
+      <p class="back-to-top"><a href="#top">Back to top</a></p>
     </section>
 
   </div>
 
   <script src="menu.js?v=5"></script>
   <script>
-    function _showBody() { document.body.style.visibility = 'visible'; }
     if (typeof initMenu === 'function') {
-      initMenu().then(_showBody).catch(_showBody);
+      initMenu();
     } else {
       window.addEventListener('DOMContentLoaded', function () {
-        if (typeof initMenu === 'function') initMenu().then(_showBody).catch(_showBody);
-        else _showBody();
+        if (typeof initMenu === 'function') initMenu();
       });
     }
   </script>
