@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoPro Pros</title>
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
+
+<body>
+  <div id="menu-container"></div>
+  <div class="content">
+    <main class="main">
+      <section>
+        <h2>VoPro Pros</h2>
+        <p>
+          VoPro Pros is a voter protection organization focused on helping people protect democracy through
+          election education, volunteer training, and rapid-response mobilization.
+        </p>
+        <p>
+          Their work includes supporting ballot access, strengthening voter confidence, and organizing volunteers
+          to respond quickly when election issues arise. It is a practical, action-oriented group for people who
+          want to help ensure every vote is counted fairly.
+        </p>
+      </section>
+
+      <section>
+        <h2>Visit the organization</h2>
+        <p>
+          Visit <a href="https://vopropros.com" target="_blank" rel="noopener"><strong>vopropros.com</strong></a>
+          to learn more about the organization, its campaigns, and how to get involved.
+        </p>
+      </section>
+
+      <section>
+        <h2>Learn About Current Actions</h2>
+        <p>
+          You can sign up for updates on <a href="https://vopropros.com" target="_blank" rel="noopener"><strong>VoPro Pros</strong></a>.
+          You can also join Slack. The <a href="vop-newsletter.html"><strong>October 6 newsletter</strong></a> is here.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <script src="menu.js"></script>
+  <script>
+    if (typeof initMenu === 'function') {
+      initMenu();
+    } else {
+      window.addEventListener('DOMContentLoaded', function () {
+        if (typeof initMenu === 'function') initMenu();
+      });
+    }
+  </script>
+</body>
+
+</html>
