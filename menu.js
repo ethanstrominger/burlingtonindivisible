@@ -1,65 +1,38 @@
-// Dynamically inject menu.html into #menu-container if present, then initialize menu logic
+// Dynamically inject the shared menu into #menu-container.
 async function initMenu() {
   const menuContainer = document.getElementById('menu-container');
-  if (menuContainer) {
-    const fallbackMenuMarkup = [
-      '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fff; margin-bottom: 0.5em;min-height:3.2em;">',
-      '  <div style="width:100%;display:flex;align-items:center;justify-content:center;position:relative;">',
-      '    <h1 class="burlingtonindivisible-title" style="margin-bottom:0.1em; margin-top:0; width:100%; text-align:center;">Burlington Indivisible</h1>',
-      '    <div style="position:absolute;right:2em;top:58%;transform:translateY(-50%);display:flex;align-items:flex-start;gap:0.8em;">',
-      '      <a href="https://www.facebook.com/groups/burlingtonindivisible" target="_blank" rel="noopener" aria-label="Join Burlington Indivisible on Facebook" style="display:inline-flex;align-items:center;justify-content:center;width:2.15em;height:2.15em;border-radius:50%;background:#1877f2;color:#fff;font-family:Arial,sans-serif;font-size:1.35em;font-weight:700;line-height:1;text-decoration:none;white-space:nowrap;">',
-      '        <span style="transform:translateY(-0.02em);">f</span>',
-      "      </a>",
-      '      <a href="subscribe.html" style="color:#23408e;font-weight:700;text-decoration:underline;padding:0.3em 0.6em;border-radius:5px;transition:background 0.2s;white-space:nowrap;">Subscribe</a>',
-      '      <a href="contact.html" class="contact-link-next-title" style="color:#23408e;font-weight:700;text-decoration:underline;padding:0.3em 0.6em;border-radius:5px;transition:background 0.2s;white-space:nowrap;">Contact</a>',
-      "    </div>",
-      "  </div>",
-      '  <div class="burlingtonindivisible-subtitle" style="margin-bottom:0.2em;">Burlington, MA Indivisible Chapter</div>',
-      '  <div style="font-size:0.95em;font-style:italic;color:#23408e;margin-bottom:0.7em;">Advocate, Donate, Protest, Volunteer, Boycott</div>',
-      "</div>",
-      '<nav class="main-menu">',
-      '  <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">',
-      '    <span class="menu-bar"></span>',
-      '    <span class="menu-bar"></span>',
-      '    <span class="menu-bar"></span>',
-      "  </button>",
-      '  <div class="menu-links" id="menuLinks">',
-      '    <a href="about.html" class="menu-item">About</a>',
-      '    <a href="electionactions.html" class="menu-item">Election Actions</a>',
-      '    <a href="vopropros.html" class="menu-item">VoPro Pros</a>',
-      '    <a href="protests1000districtave.html" class="menu-item">Protests at 1000 District Ave</a>',
-      '    <a href="donate.html" class="menu-item">Donate</a>',
-      "  </div>",
-      "</nav>",
-    ].join("");
-
-    try {
-      const response = await fetch('menu.html');
-      if (!response.ok) throw new Error('Failed to fetch menu.html');
-      const html = await response.text();
-      const temp = document.createElement('div');
-      temp.innerHTML = html;
-      let menuMarkup = '';
-      const nav = temp.querySelector('nav.main-menu');
-      const header = temp.querySelector('div[style*="flex-direction:column"]');
-      const announcement = temp.querySelector('.menu-announcement');
-      if (header) menuMarkup += header.outerHTML;
-      if (nav) menuMarkup += nav.outerHTML;
-      if (announcement) menuMarkup += announcement.outerHTML;
-      if (!menuMarkup) menuMarkup = temp.innerHTML;
-      menuContainer.innerHTML = menuMarkup || fallbackMenuMarkup;
-    } catch (e) {
-      // file:// pages and some browser settings block fetch for local files.
-      menuContainer.innerHTML = fallbackMenuMarkup;
-    }
-
-    // Wait for DOM update, then run menu logic
-    setTimeout(() => {
-      setupMenuLogic();
-    }, 0);
-  } else {
+  if (!menuContainer) {
     setupMenuLogic();
+    return;
   }
+
+  try {
+    const response = await fetch('menu.html');
+    if (!response.ok) throw new Error('Failed to fetch menu.html');
+
+    const html = await response.text();
+    const temp = document.createElement('div');
+    temp.innerHTML = html;
+
+    const nav = temp.querySelector('nav.main-menu');
+    const header = temp.querySelector('div[style*="flex-direction:column"]');
+    const announcement = temp.querySelector('.menu-announcement');
+
+    let menuMarkup = '';
+    if (header) menuMarkup += header.outerHTML;
+    if (nav) menuMarkup += nav.outerHTML;
+    if (announcement) menuMarkup += announcement.outerHTML;
+    if (!menuMarkup) menuMarkup = temp.innerHTML;
+
+    menuContainer.innerHTML = menuMarkup;
+  } catch (error) {
+    console.warn('Menu could not be loaded:', error);
+    return;
+  }
+
+  setTimeout(() => {
+    setupMenuLogic();
+  }, 0);
 }
 
 // Analytics: record page loads and link clicks
