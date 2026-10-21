@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Election Actions</title>
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
+
+<body>
+  <div id="menu-container"></div>
+  <div class="content">
+    <main class="main">
+      <section>
+        <h2>Election Actions</h2>
+        <p>Hello</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="menu.js"></script>
+  <script>
+    if (typeof initMenu === 'function') {
+      initMenu();
+    } else {
+      window.addEventListener('DOMContentLoaded', function () {
+        if (typeof initMenu === 'function') initMenu();
+      });
+    }
+  </script>
+</body>
+
+</html>
