@@ -1,15 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting to Election Actions</title>
-  <meta http-equiv="refresh" content="0; url=electionactions.html">
-  <script>
-    window.location.replace('electionactions.html');
-  </script>
+  <title>Burlington Indivisible</title>
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
+
 <body>
-  <p>Redirecting to <a href="electionactions.html">electionactions.html</a>...</p>
+  <div id="menu-container"></div>
+  <div class="content">
+    <main class="main">
+      <section>
+        <h2>Welcome to Burlington Indivisible</h2>
+        <p>
+          We are a Burlington, MA community working together to defend democracy, support immigrants, and take
+          meaningful local action through advocacy, protest, volunteering, and mutual support. Burlington Indivisible
+          organizes postcard events and Monday/Tuesday protests in Burlington.
+        </p>
+        <p>Whether you are joining for the first time or returning each week, you are welcome here.</p>
+      </section>
+
+      <section>
+        <h3>Get Involved</h3>
+        <ul>
+          <li><a href="protests1000districtave.html">Protests at 1000 District Ave</a></li>
+          <li><a href="mondaytuesday.html">Monday & Tuesday protest details</a></li>
+          <li><a href="postcards.html">Postcards campaign</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="subscribe.html">Subscribe for updates</a></li>
+          <li><a href="contact.html">Contact us</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Nearby Advocacy Organizations</h3>
+        <ul>
+          <li><a href="https://indivisiblelab.org" target="_blank" rel="noopener">IndivisibleLAB (Lexington, Arlington, Burlington)</a></li>
+          <li><a href="https://indivisibleinn.org" target="_blank" rel="noopener">Indivisibleinn (Melrose, Wakefield)</a></li>
+          <li><a href="https://lexingtonalarm.org" target="_blank" rel="noopener">Lexington Alarm</a></li>
+          <li><a href="https://concordindivisible.org" target="_blank" rel="noopener">Concord Indivisible</a></li>
+          <li><a href="https://billericaunited.org" target="_blank" rel="noopener">Billerica United Indivisible</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Immigrant Organizations</h3>
+        <ul>
+          <li><a href="https://miracoalition.org" target="_blank" rel="noopener">MIRA</a></li>
+          <li><a href="https://beyondbondboston.org" target="_blank" rel="noopener">BIJAN</a></li>
+          <li><a href="https://lucemass.org" target="_blank" rel="noopener">LUCE</a></li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Helpful Links</h3>
+        <p>Resources referenced in our Monday & Tuesday protest information:</p>
+        <ul>
+          <li><a href="https://bearingwitnessne.org" target="_blank" rel="noopener">Bearing Witness</a></li>
+          <li><a href="https://www.mbta.com/schedules/350/line" target="_blank" rel="noopener">MBTA Route 350 schedule</a></li>
+          <li><a href="https://lrta.com/routes/route-14/" target="_blank" rel="noopener">LRTA Route 14 schedule</a></li>
+          <li><a href="parking.html">Parking information</a></li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="menu.js"></script>
+  <script>
+    if (typeof initMenu === 'function') {
+      initMenu();
+    } else {
+      window.addEventListener('DOMContentLoaded', function () {
+        if (typeof initMenu === 'function') initMenu();
+      });
+    }
+  </script>
 </body>
+
 </html>
