@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Postcards</title>
+  <link rel="stylesheet" href="style.css?v=4">
+</head>
+
+<body>
+  <div id="menu-container"></div>
+  <div class="content">
+    <main class="main">
+      <section>
+        <h2>Postcards</h2>
+        <p>Links for Louisiana runoff postcard campaign:</p>
+        <ul>
+          <li>
+            <a href="https://www.mobilize.us/dashboard/burlingtonindivisiblema/event/1081014/" target="_blank" rel="noopener">
+              Nov 18 - 1-3pm - Just Salad, Burlington
+            </a>
+          </li>
+          <li>
+            <a href="https://www.mobilize.us/dashboard/burlingtonindivisiblema/event/1081015/" target="_blank" rel="noopener">
+              Nov 19 - 7-9pm - Wegmans, Burlington
+            </a>
+          </li>
+          <li>
+            Email <a href="mailto:info@burlingtonindivisible.org">info@burlingtonindivisible.org</a> to arrange postcard pickup or
+            drop off
+          </li>
+          <li>
+            <a href="https://bluewavepostcards.org" target="_blank" rel="noopener">Blue Wave Postcards</a>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <script src="menu.js"></script>
+  <script>
+    if (typeof initMenu === 'function') {
+      initMenu();
+    } else {
+      window.addEventListener('DOMContentLoaded', function () {
+        if (typeof initMenu === 'function') initMenu();
+      });
+    }
+  </script>
+</body>
+
+</html>
